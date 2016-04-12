@@ -49,8 +49,7 @@ PRODUCT_PACKAGES += \
     gps.msm7x27a
 
 PRODUCT_PACKAGES += \
-    camera.msm7x27a \
-    Snap
+    camera.msm7x27a 
 
 PRODUCT_PACKAGES += \
     com.android.future.usb.accessory \
