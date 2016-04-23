@@ -125,7 +125,6 @@ static int snd_device = -1;
 static uint32_t SND_DEVICE_CURRENT=-1;
 static uint32_t SND_DEVICE_HANDSET=-1;
 static uint32_t SND_DEVICE_SPEAKER=-1;
-static uint32_t SND_DEVICE_STEREO_SPEAKER=-1;
 static uint32_t SND_DEVICE_BT=-1;
 static uint32_t SND_DEVICE_BT_EC_OFF=-1;
 static uint32_t SND_DEVICE_HEADSET=-1;
@@ -177,7 +176,6 @@ mDirectOutrefCnt(0)
                 CHECK_FOR(CURRENT);
                 CHECK_FOR(HANDSET);
                 CHECK_FOR(SPEAKER);
-                CHECK_FOR(STEREO_SPEAKER);
                 CHECK_FOR(BT);
                 CHECK_FOR(BT_EC_OFF);
                 CHECK_FOR(HEADSET);
@@ -1223,7 +1221,6 @@ int check_and_set_audpp_parameters(char *buf, int size)
             enable_preproc_mask[samp_index] |= NS_ENABLE;
         }
     }
-    ALOGV("success audp params");
     return 0;
 
 token_err:
@@ -1371,7 +1368,7 @@ static int msm72xx_enable_postproc(bool state)
         return -EINVAL;
     }
 
-    if(snd_device == SND_DEVICE_SPEAKER || snd_device == SND_DEVICE_STEREO_SPEAKER)
+    if(snd_device == SND_DEVICE_SPEAKER)
     {
         device_id = 0;
         ALOGI("set device to SND_DEVICE_SPEAKER device_id=0");
@@ -1640,7 +1637,6 @@ status_t AudioHardware::setMasterVolume(float v)
     ALOGI("Set master volume to %d.\n", vol);
     set_volume_rpc(SND_DEVICE_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_SPEAKER, SND_METHOD_VOICE, vol, m7xsnddriverfd);
-    set_volume_rpc(SND_DEVICE_STEREO_SPEAKER, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_BT,      SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_HEADSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
     set_volume_rpc(SND_DEVICE_IN_S_SADC_OUT_HANDSET, SND_METHOD_VOICE, vol, m7xsnddriverfd);
@@ -1921,11 +1917,6 @@ status_t AudioHardware::doRouting(AudioStreamInMSM72xx *input, int outputDevice)
     if((outputDevices  == 0) && (FmA2dpStatus == true))
        new_snd_device = SND_DEVICE_FM_DIGITAL_BT_A2DP_HEADSET;
 #endif
-
-    if (new_snd_device == SND_DEVICE_SPEAKER && SND_DEVICE_STEREO_SPEAKER >= 0) {
-       ALOGI("Routing audio to Stereo Speakerphone\n");
-       new_snd_device = SND_DEVICE_STEREO_SPEAKER;
-    }
 
     if (new_snd_device != -1 && new_snd_device != mCurSndDevice) {
         ret = doAudioRouteOrMute(new_snd_device);

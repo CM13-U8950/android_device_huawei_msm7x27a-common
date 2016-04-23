@@ -107,7 +107,6 @@ BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=huawei androidboot.selinux=permissive
 BOARD_PAGE_SIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/huawei/huawei-kernel-3.4
-#TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.9-15.05/bin/arm-linux-gnueabihf-
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 
 # Lights
@@ -144,7 +143,7 @@ ifeq ($(HOST_OS),linux)
   WITH_DEXPREOPT := true
 endif
 WITH_DEXPREOPT_PIC := true
-DONT_DEXPREOPT_PREBUILTS := true
+#DONT_DEXPREOPT_PREBUILTS := true
 
 # Include an expanded selection of fonts
 EXTENDED_FONT_FOOTPRINT := true
