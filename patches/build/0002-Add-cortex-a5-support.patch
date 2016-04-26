@@ -1,7 +1,7 @@
-From b72a58e6e91fbc41faae4af31a2843bdcb1c17aa Mon Sep 17 00:00:00 2001
+From e0103b14e2d8a17581ae1ab948f737d29ee18d8f Mon Sep 17 00:00:00 2001
 From: Kyle Harrison <khwebmail@gmail.com>
 Date: Thu, 29 Oct 2015 11:48:03 +0000
-Subject: [PATCH] Add cortex-a5 support
+Subject: [PATCH 2/4] Add cortex-a5 support
 
 Change-Id: I2b1260998b4560bfe46b37a06f817c35a846256d
 ---
@@ -9,10 +9,10 @@ Change-Id: I2b1260998b4560bfe46b37a06f817c35a846256d
  1 file changed, 6 insertions(+)
 
 diff --git a/core/combo/arch/arm/armv7-a-neon.mk b/core/combo/arch/arm/armv7-a-neon.mk
-index 9154f71..f17f574 100644
+index 89e6573..8bc4741 100644
 --- a/core/combo/arch/arm/armv7-a-neon.mk
 +++ b/core/combo/arch/arm/armv7-a-neon.mk
-@@ -32,6 +32,11 @@ ifeq ($(strip $(TARGET_$(combo_2nd_arch_prefix)CPU_VARIANT)),cortex-a7)
+@@ -32,6 +32,11 @@ ifneq (,$(filter cortex-a7 cortex-a53 cortex-a53.a57,$(TARGET_$(combo_2nd_arch_p
  	arch_variant_ldflags := \
  		-Wl,--no-fix-cortex-a8
  else
@@ -33,5 +33,5 @@ index 9154f71..f17f574 100644
  arch_variant_cflags += \
      -mfloat-abi=softfp
 -- 
-2.6.1
+2.8.1
 

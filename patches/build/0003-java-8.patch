@@ -1,7 +1,7 @@
-From f37f938764ce822cd3b4cd66b685a82b8a899526 Mon Sep 17 00:00:00 2001
+From a50ad6b4fb72d62f5c52f2c7ff16f21f09fdae03 Mon Sep 17 00:00:00 2001
 From: ksrt12 <kazakov12stepan2012@live.ru>
 Date: Sat, 23 Apr 2016 11:59:43 +0700
-Subject: [PATCH] java 8
+Subject: [PATCH 3/4] java 8
 
 Change-Id: Ib073d304d2d08ff9193d9f6d4c66fb64f9721cb2
 ---

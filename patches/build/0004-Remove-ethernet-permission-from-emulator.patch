@@ -1,0 +1,25 @@
+From 5ddb73b8d3e14a6df0e8100ed1427383999c2124 Mon Sep 17 00:00:00 2001
+From: ksrt12 <kazakov12stepan2012@live.ru>
+Date: Tue, 26 Apr 2016 21:33:47 +0700
+Subject: [PATCH 4/4] Remove ethernet permission from emulator
+
+Change-Id: I143776d8ab1ab431a3508bc17c0791365f3ee7be
+---
+ target/product/emulator.mk | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/target/product/emulator.mk b/target/product/emulator.mk
+index cca29ab..49c9cac 100644
+--- a/target/product/emulator.mk
++++ b/target/product/emulator.mk
+@@ -51,7 +51,6 @@ PRODUCT_PACKAGES += \
+     e2fsck
+ 
+ PRODUCT_COPY_FILES += \
+-    frameworks/native/data/etc/android.hardware.ethernet.xml:system/etc/permissions/android.hardware.ethernet.xml \
+     device/generic/goldfish/fstab.goldfish:root/fstab.goldfish \
+     device/generic/goldfish/init.goldfish.rc:root/init.goldfish.rc \
+     device/generic/goldfish/init.goldfish.sh:system/etc/init.goldfish.sh \
+-- 
+2.8.1
+
