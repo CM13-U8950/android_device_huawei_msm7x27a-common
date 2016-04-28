@@ -1,4 +1,4 @@
-From 8ec56e7b99cf88d85a7f1fb0709e00ba6243fe4b Mon Sep 17 00:00:00 2001
+From 0f6922165a0d577783b3f2bdd468bbc6cd094277 Mon Sep 17 00:00:00 2001
 From: Kyle Harrison <khwebmail@gmail.com>
 Date: Wed, 7 Oct 2015 14:27:22 +0100
 Subject: [PATCH] cortex-a5 support
@@ -31,5 +31,5 @@ index 0000000..944db2c
 @@ -0,0 +1 @@
 +include bionic/libc/arch-arm/cortex-a9/cortex-a9.mk
 -- 
-2.6.1
+2.8.1
 
