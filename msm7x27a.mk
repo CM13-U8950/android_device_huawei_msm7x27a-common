@@ -131,7 +131,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     debug.mdpcomp.logs=0 \
     debug.gralloc.map_fb_memory=1 \
     debug.hwc.fakevsync=1 \
-    ro.max.fling_velocity=4000 \
+    ro.max.fling_velocity=12000 \
+    ro.min.fling_velocity=8000 \
     ro.opengles.version=131072 \
     ro.sf.lcd_density=240
 
