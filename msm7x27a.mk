@@ -31,14 +31,12 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudioutils
 
+# Display HAL
 PRODUCT_PACKAGES += \
-    libgenlock \
-    copybit.msm7x27a \
     gralloc.msm7x27a \
+    copybit.msm7x27a \
     libqdMetaData \
-    memtrack.msm7x27a \
-    hwcomposer.msm7x27a \
-    libtilerenderer
+    memtrack.msm7x27a
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
