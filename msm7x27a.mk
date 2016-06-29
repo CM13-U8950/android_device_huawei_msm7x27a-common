@@ -31,12 +31,14 @@ PRODUCT_PACKAGES += \
     audio.usb.default \
     libaudioutils
 
-# Display HAL
 PRODUCT_PACKAGES += \
-    gralloc.msm7x27a \
+    libgenlock \
     copybit.msm7x27a \
+    gralloc.msm7x27a \
     libqdMetaData \
-    memtrack.msm7x27a
+    memtrack.msm7x27a \
+    hwcomposer.msm7x27a \
+    libtilerenderer
 
 PRODUCT_PACKAGES += \
     libmm-omxcore \
@@ -123,7 +125,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     debug.egl.recordable.rgba8888=1 \
     debug.composition.type=dyn \
-    debug.hwc.dynThreshold=1.9 \
     persist.hwc.mdpcomp.enable=false \
     debug.mdpcomp.logs=0 \
     debug.gralloc.map_fb_memory=1 \
@@ -131,7 +132,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.max.fling_velocity=12000 \
     ro.min.fling_velocity=8000 \
     ro.opengles.version=131072 \
-    ro.sf.lcd_density=240
+    ro.sf.lcd_density=220
 
 PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.heapstartsize=5m \
@@ -174,7 +175,19 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Strict mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.strictmode.visual=0 \
-    persist.sys.strictmode.disable=1
+    persist.sys.strictmode.disable=1 \
+    ro.HOME_APP_ADJ=1 \
+    windowsmgr.max_events_per_sec=150 \
+    ro.lge.proximity.delay=25 \
+    mot.proximity.delay=25 \
+    ro.kernel.android.checkjni=0 \
+    persist.sys.purgeable_assets=1 \
+    dalvik.vm.verify-bytecode=false \
+    dalvik.vm.dexopt-flags=v=n,o=v \
+    persist.android.strictmode=0 \
+    persist.sys.scrollingcache=3 \
+    persist.sys.composition.type=dyn \
+    ro.ril.hep=1
 
 # Stagefright
 PRODUCT_PROPERTY_OVERRIDES += \
