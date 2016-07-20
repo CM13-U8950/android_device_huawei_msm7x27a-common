@@ -1,0 +1,38 @@
+From 9b4e6673eac97c3a9cf60ff941b51643a23b3406 Mon Sep 17 00:00:00 2001
+From: ksrt12 <kazakov12stepan2012@live.ru>
+Date: Wed, 20 Jul 2016 13:16:18 +0700
+Subject: [PATCH] custom url
+
+Change-Id: I229a78996af4e06c9f1bbea3f912cebb2d28236d
+---
+ res/values/config.xml                                    | 2 +-
+ src/com/cyanogenmod/updater/service/DownloadService.java | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/res/values/config.xml b/res/values/config.xml
+index f12ac5b..234214c 100644
+--- a/res/values/config.xml
++++ b/res/values/config.xml
+@@ -8,6 +8,6 @@
+ -->
+ <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+     <!-- CMUpdate Config Strings -->
+-    <string name="conf_update_server_url_def" translatable="false">https://download.cyanogenmod.org/api</string>
++    <string name="conf_update_server_url_def" translatable="false">https://raw.githubusercontent.com/ksrt12/CMUpdater_API/cm-13.0/API</string>
+     <string name="conf_changelog_url" translatable="false">http://localhost/changelog.xml</string>
+ </resources>
+diff --git a/src/com/cyanogenmod/updater/service/DownloadService.java b/src/com/cyanogenmod/updater/service/DownloadService.java
+index f4b2b80..cb38faa 100644
+--- a/src/com/cyanogenmod/updater/service/DownloadService.java
++++ b/src/com/cyanogenmod/updater/service/DownloadService.java
+@@ -95,7 +95,7 @@ public class DownloadService extends IntentService
+     }
+ 
+     private UpdatesJsonObjectRequest buildRequest(String sourceIncremental) {
+-        URI requestUri = URI.create(getServerUri() + "/v1/build/get_delta");
++        URI requestUri = URI.create(getServerUri());
+         UpdatesJsonObjectRequest request;
+ 
+         // Set request body
+-- 
+2.9.2
