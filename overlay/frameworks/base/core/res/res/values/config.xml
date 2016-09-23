@@ -234,5 +234,5 @@
     <integer translatable="false" name="config_wifi_supplicant_scan_interval">60000</integer>
 
     <!-- Disable IpReachability monitor -->
-    <bool name="config_wifi_ipreachability_monitor">false</bool>
+    <add-resource type="bool" name="config_wifi_ipreachability_monitor">false</add-resource>
 </resources>
