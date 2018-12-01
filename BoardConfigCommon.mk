@@ -104,6 +104,7 @@ BOARD_KERNEL_BASE := 0x00200000
 BOARD_KERNEL_CMDLINE := androidboot.hardware=huawei androidboot.selinux=permissive
 BOARD_PAGE_SIZE := 2048
 TARGET_KERNEL_SOURCE := kernel/huawei/huawei-kernel-3.4
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := /home/ksrt12/UBERTC/out/arm-linux-androideabi-4.9u/bin/arm-linux-androideabi-
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01800000
 
 # Lights
